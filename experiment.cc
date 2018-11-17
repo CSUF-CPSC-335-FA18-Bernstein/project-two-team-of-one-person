@@ -22,7 +22,7 @@ int main() {
     return 1;
   }
 
-  int n = 1000;
+  int n = 20000;
   string_vector n_words(all_words.begin(), all_words.begin() + n);
 
   randomize_list(n_words);
@@ -33,6 +33,13 @@ int main() {
   cout << "mergesort, "
        << "n=" << n << ", "
        << "elapsed time = " << elapsed << " seconds" << endl;
+  
+  Timer clock;
+  quicksort(n_words);
+  double elapsedtime = clock.elapsed();
+  cout << "quicksort, "
+       << "n=" << n << ", "
+       << "elapsed time = " << elapsedtime << " seconds" << endl;
 
   return 0;
 }
